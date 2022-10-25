@@ -5,7 +5,7 @@ const LeftSideNav = () => {
   const [topics, SetTopics] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/topics")
+    fetch("http://localhost:5000/all-topics")
       .then((res) => res.json())
       .then((data) => SetTopics(data));
   }, []);

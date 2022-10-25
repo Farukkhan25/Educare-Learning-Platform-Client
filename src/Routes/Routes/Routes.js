@@ -19,8 +19,9 @@ export const routes = createBrowserRouter([
       },
 
       {
-        path: "/courses/topics/:id",
+        path: "/topics",
         element: <Topics></Topics>,
+        loader: () => fetch("http://localhost:5000/topics"),
       },
     ],
   },
