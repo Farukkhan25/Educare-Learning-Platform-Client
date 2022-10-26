@@ -30,8 +30,12 @@ const Header = () => {
     >
       <Container>
         <Navbar.Brand>
-          <Link to="/" className=" text-decoration-none">
-            Educare
+          <Link to="/" className=" text-decoration-none ">
+            <span>
+              <img src="./logo.png" alt="" style={{ height: "40px" }} />
+              
+            </span>
+            <span className="ps-1 pe-4">Educare</span>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

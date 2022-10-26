@@ -93,32 +93,18 @@ const FAQ = () => {
         <MDBAccordion alwaysOpen initialActive={1}>
           <MDBAccordionItem
             collapseId={1}
-            headerTitle="Is online education as effective as face-to-face instruction?"
+            headerTitle="Is online education more conducive to cheating?"
           >
-            <strong>Absulately !!!</strong> Online education may seem relatively
-            new, but years of research suggests it can be just as effective as
-            traditional coursework, and often more so. According to a U.S.
-            Department of Education analysis of more than 1,000 learning
-            studies, online students tend to outperform classroom-based students
-            across most disciplines and demographics. Another major review
-            published the same year found that online students had the advantage
-            70 percent of the time, a gap authors projected would only widen as
-            programs and technologies evolve.
-          </MDBAccordionItem>
-          <MDBAccordionItem
-            collapseId={2}
-            headerTitle="Do employers accept online degrees?"
-          >
-            <strong>Yes they accept if you have skills.</strong> All new
-            learning innovations are met with some degree of scrutiny, but
-            skepticism subsides as methods become more mainstream. Such is the
-            case for online learning. Studies indicate employers who are
-            familiar with online degrees tend to view them more favorably, and
-            more employers are acquainted with them than ever before. The
-            majority of colleges now offer online degrees, including most
-            public, not-for-profit, and Ivy League universities. Online learning
-            is also increasingly prevalent in the workplace as more companies
-            invest in web-based employee training and development programs.
+            The concern that online students cheat more than traditional
+            students is perhaps misplaced. When researchers at Marshall
+            University conducted a study to measure the prevalence of cheating
+            in online and classroom-based courses, they concluded, “somewhat
+            surprisingly, the results showed higher rates of academic dishonesty
+            in live courses.” The authors suggest the social familiarity of
+            students in a classroom setting may lessen their sense of moral
+            obligation. Another reason cheating is less common in online
+            programs is that colleges have adopted strict anti-cheating
+            protocols and technologies.
           </MDBAccordionItem>
           <MDBAccordionItem
             collapseId={3}
@@ -156,6 +142,25 @@ const FAQ = () => {
             simulations that help students establish computer literacy before
             beginning their studies. Microsoft’s online digital literacy
             curriculum is one free resource.
+          </MDBAccordionItem>
+
+          <MDBAccordionItem
+            collapseId={2}
+            headerTitle="How do I know if an online degree program is credible?"
+          >
+            As with traditional colleges, some online schools are considered
+            more credible than others. Reputation, post-graduation employment
+            statistics, and enrollment numbers are not always reliable
+            indicators of quality, which is why many experts advise students to
+            look for accredited schools. In order for an online college to be
+            accredited, a third-party organization must review its practices,
+            finances, instructors, and other important criteria and certify that
+            they meet certain quality standards. The certifying organization
+            matters, too, since accreditation is only as reliable as the agency
+            that grants it. Students should confirm online programs’ accrediting
+            agencies are recognized by the U.S. Department of Education and/or
+            the Council on Higher Education Accreditation before submitting
+            their applications.
           </MDBAccordionItem>
           <MDBAccordionItem
             collapseId={1}
