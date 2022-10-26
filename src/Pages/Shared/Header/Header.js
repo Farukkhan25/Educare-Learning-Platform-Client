@@ -1,8 +1,25 @@
-import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import React, { useContext } from "react";
+import {
+  Button,
+  Container,
+  Image,
+  Nav,
+  Navbar,
+  NavDropdown,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <Navbar
       collapseOnSelect
@@ -32,6 +49,35 @@ const Header = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Nav>
+            <>
+              {user?.uid ? (
+                <>
+                  <span>{user?.displayName}</span>
+                  <Button variant="light" onClick={handleLogOut}>
+                    Log out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link to="/login">Login</Link>
+                  <Link to="/register">Register</Link>
+                </>
+              )}
+            </>
+            <Link to="/profile">
+              {user?.photoURL ? (
+                <Image
+                  style={{ height: "30px" }}
+                  roundedCircle
+                  src={user?.photoURL}
+                ></Image>
+              ) : (
+                <FaUser></FaUser>
+              )}
+            </Link>
+          </Nav>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>
