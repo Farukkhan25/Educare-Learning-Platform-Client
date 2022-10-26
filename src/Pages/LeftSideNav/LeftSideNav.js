@@ -5,7 +5,7 @@ const LeftSideNav = () => {
   const [alltopics, SetAlltopics] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/courses")
+    fetch("https://educare-learning-platform-server.vercel.app/courses")
       .then((res) => res.json())
       .then((data) => SetAlltopics(data));
   }, []);

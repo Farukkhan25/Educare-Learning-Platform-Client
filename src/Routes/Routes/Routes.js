@@ -27,13 +27,16 @@ export const routes = createBrowserRouter([
       {
         path: "/topics",
         element: <Topics></Topics>,
-        loader: () => fetch("http://localhost:5000/topics"),
+        loader: () =>
+          fetch("https://educare-learning-platform-server.vercel.app/topics"),
       },
       {
         path: "/courseDetails/:id",
         element: <CourseDetails></CourseDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courseDetails/${params.id}`),
+          fetch(
+            `https://educare-learning-platform-server.vercel.app/courseDetails/${params.id}`
+          ),
       },
       {
         path: "/login",
