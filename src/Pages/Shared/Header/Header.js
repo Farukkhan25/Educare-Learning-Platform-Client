@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Button,
   Container,
@@ -13,11 +13,22 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [mode, setmode] = useState("light");
 
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.error(error));
+  };
+
+  const toggleMode = () => {
+    if (mode === "light") {
+      setmode("dark");
+      document.body.style.backgroundColor = "#050122";
+    } else {
+      setmode("light");
+      document.body.style.backgroundColor = "white";
+    }
   };
 
   return (
@@ -33,7 +44,6 @@ const Header = () => {
           <Link to="/" className=" text-decoration-none ">
             <span>
               <img src="./logo.png" alt="" style={{ height: "40px" }} />
-              
             </span>
             <span className="ps-1 pe-4">Educare</span>
           </Link>
@@ -71,17 +81,34 @@ const Header = () => {
             </>
             <Link to="/profile">
               {user?.photoURL ? (
-                <Image
-                  style={{ height: "30px" }}
-                  roundedCircle
-                  src={user?.photoURL}
-                ></Image>
+                <Image roundedCircle src={user?.photoURL}></Image>
               ) : (
                 <FaUser></FaUser>
               )}
             </Link>
           </Nav>
         </Navbar.Collapse>
+
+        <div className="mx-3">
+          <div
+            className={`form-check form-switch text-${
+              mode === "light" ? "dark" : "light"
+            }`}
+          >
+            <input
+              className="form-check-input"
+              onClick={toggleMode}
+              type="checkbox"
+              id="flexSwitchCheckDefault"
+            />
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckDefault"
+            >
+              Dark Mode
+            </label>
+          </div>
+        </div>
       </Container>
     </Navbar>
   );
