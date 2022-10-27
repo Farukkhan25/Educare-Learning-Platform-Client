@@ -17,57 +17,55 @@ import {
   MDBCheckbox,
 } from "mdb-react-ui-kit";
 
-
 const Register = () => {
-    const [error, setError] = useState("");
-    const [accepted, setAccepted] = useState(false);
-    const { createUser, updateUserProfile, verifyEmail } =
-      useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [accepted, setAccepted] = useState(false);
+  const { createUser, updateUserProfile, verifyEmail } =
+    useContext(AuthContext);
 
-    const handleSubmit = event => {
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const photoURL = form.photoURL.value;
-        const email = form.email.value;
-        const password = form.password.value;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
-        createUser(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                setError('');
-                form.reset()
-                handleUpdateUserProfile(name, photoURL);
-                handleEmailVerification();
-                toast.success("Please verify your email address.");
-            })
-            .catch(e => {
-                console.error(e);
-                setError(e.message);
-            });
-    }
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setError("");
+        form.reset();
+        handleUpdateUserProfile(name, photoURL);
+        handleEmailVerification();
+        toast.success("Please verify your email address.");
+      })
+      .catch((e) => {
+        console.error(e);
+        setError(e.message);
+      });
+  };
 
-    const handleUpdateUserProfile = (name, photoURL) => {
-        const profile = {
-            displayName: name,
-            photoURL: photoURL
-        }
-         updateUserProfile(profile)
-           .then(() => {})
-           .catch((error) => console.error(error));
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateUserProfile(profile)
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
-    }
+  const handleEmailVerification = () => {
+    verifyEmail()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
-    const handleEmailVerification  = () => {
-        verifyEmail()
-        .then(() =>{})
-        .catch(error => console.error(error));
-    }
-
-    const handleAccepted = event => {
-        setAccepted(event.target.checked)
-    }
+  const handleAccepted = (event) => {
+    setAccepted(event.target.checked);
+  };
 
   return (
     // <Form onSubmit={handleSubmit}>
@@ -118,9 +116,17 @@ const Register = () => {
     //   <Form.Text className="text-danger">{error}</Form.Text>
     // </Form>
     <Form onSubmit={handleSubmit}>
-      <MDBContainer fluid className="my-5">
-        <MDBRow className="g-0 align-items-center">
-          <MDBCol col="6">
+      <MDBContainer breakpoint="md" className="my-5">
+        <MDBRow className=" g-5 align-items-center">
+          <MDBCol col="6" md="12" lg="6">
+            <img
+              src="https://img.freepik.com/free-vector/secure-login-concept-illustration_114360-4320.jpg?w=826&t=st=1666860644~exp=1666861244~hmac=6d992bd520b859c5a64d13102afca25b86fb8afa9423a6319aa8d1d8b9bec8e9"
+              class="w-100 rounded-4 shadow-4"
+              alt=""
+              fluid
+            />
+          </MDBCol>
+          <MDBCol col="6" md="12" lg="6">
             <MDBCard
               className="my-5 cascading-right"
               style={{
@@ -131,25 +137,19 @@ const Register = () => {
               <MDBCardBody className="p-5 shadow-5 text-center">
                 <h2 className="fw-bold mb-5">Sign up now</h2>
 
-                <MDBRow>
-                  <MDBCol col="6">
-                    <MDBInput
-                      wrapperClass="mb-4"
-                      label="First name"
-                      id="form1"
-                      type="text"
-                    />
-                  </MDBCol>
+                <MDBInput
+                  wrapperClass="mb-4"
+                  label="Full name"
+                  id="form1"
+                  type="text"
+                />
 
-                  <MDBCol col="6">
-                    <MDBInput
-                      wrapperClass="mb-4"
-                      label="Last name"
-                      id="form2"
-                      type="text"
-                    />
-                  </MDBCol>
-                </MDBRow>
+                <MDBInput
+                  wrapperClass="mb-4"
+                  label="Photo URL"
+                  id="form1"
+                  type="text"
+                />
 
                 <MDBInput
                   wrapperClass="mb-4"
@@ -184,40 +184,14 @@ const Register = () => {
 
                 <p className="fw-bold m-2 text-danger">{error}</p>
 
-                <div className="text-center">
-                  <p>or sign up with:</p>
-
-                  
-
-                  <MDBBtn
-                    tag="a"
-                    color="none"
-                    className="mx-3"
-                    style={{ color: "#1266f1" }}
-                  >
-                    <MDBIcon fab icon="google" size="sm" />
-                  </MDBBtn>
-
-                  <MDBBtn
-                    tag="a"
-                    color="none"
-                    className="mx-3"
-                    style={{ color: "#1266f1" }}
-                  >
-                    <MDBIcon fab icon="github" size="sm" />
-                  </MDBBtn>
-                </div>
+                <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
+                  Already have an account?{" "}
+                  <Link to="/login" style={{ color: "#393f81" }}>
+                    Login
+                  </Link>
+                </p>
               </MDBCardBody>
             </MDBCard>
-          </MDBCol>
-
-          <MDBCol col="6">
-            <img
-              src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
-              class="w-100 rounded-4 shadow-4"
-              alt=""
-              fluid
-            />
           </MDBCol>
         </MDBRow>
       </MDBContainer>

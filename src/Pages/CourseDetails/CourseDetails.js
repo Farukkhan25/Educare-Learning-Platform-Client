@@ -1,17 +1,17 @@
-import React, { useRef } from 'react';
-import { Button, Card, Container } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
-import { useReactToPrint } from 'react-to-print';
+import React, { useRef } from "react";
+import { Button, Card, Container } from "react-bootstrap";
+import { Link, useLoaderData } from "react-router-dom";
+import { useReactToPrint } from "react-to-print";
 
 const CourseDetails = () => {
-    const detailsData = useLoaderData();
-    console.log(detailsData);
-    const { title, details, image } = detailsData;
+  const detailsData = useLoaderData();
+  const { title, details, image } = detailsData;
 
-    const componentRef = useRef();
-    const handlePrint = useReactToPrint({
-      content: () => componentRef.current,
-    });
+  // To Print/Download PDF
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
   return (
     <Container fluid="md">
       <Card>
@@ -32,9 +32,9 @@ const CourseDetails = () => {
           </Card.Body>
         </div>
         <Card.Footer>
-        <Link to="/">
-          <Button variant="primary">Get premium access</Button>
-        </Link>
+          <Link to="/">
+            <Button variant="primary">Get premium access</Button>
+          </Link>
         </Card.Footer>
       </Card>
     </Container>

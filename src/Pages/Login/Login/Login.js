@@ -19,7 +19,7 @@ import {
   FaGoogle,
   FaGithub,
 } from "react-icons/fa";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Login = () => {
@@ -122,9 +122,9 @@ const Login = () => {
     //   </div>
     // </div>
 
-    <MDBContainer fluid className="p-3 my-5">
+    <MDBContainer breakpoint="md" className="p-3 my-5">
       <MDBRow>
-        <MDBCol col="10" md="6">
+        <MDBCol col="10" md="12" lg="6">
           <img
             src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
             class="img-fluid"
@@ -132,7 +132,7 @@ const Login = () => {
           />
         </MDBCol>
 
-        <MDBCol col="4" md="6" onSubmit={handleSubmit}>
+        <MDBCol col="4" md="12" lg="6" onSubmit={handleSubmit}>
           <MDBInput
             wrapperClass="mb-4"
             label="Email address"
@@ -166,8 +166,17 @@ const Login = () => {
             <p className="text-center text-danger fw-bold mx-3 mb-0">{error}</p>
           </div>
 
-          <div className="divider d-flex align-items-center my-4">
-            <p className="text-center fw-bold mx-3 mb-0">OR</p>
+          <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
+            Don't have an account?{" "}
+            <Link to="/register" style={{ color: "#393f81" }}>
+              Register here
+            </Link>
+          </p>
+
+          <div className="divider d-flex align-items-center justify-content-center my-4">
+            <p className="text-center fw-bold mx-3 mb-3">
+              ----------------------OR----------------------
+            </p>
           </div>
 
           <MDBBtn

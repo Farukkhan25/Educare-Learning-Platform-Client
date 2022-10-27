@@ -4,8 +4,7 @@ import {
   Container,
   Image,
   Nav,
-  Navbar,
-  NavDropdown,
+  Navbar
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
@@ -61,12 +60,16 @@ const Header = () => {
               FAQ
             </Link>
           </Nav>
-          <Nav>
+          <Nav className="d-flex align-items-center justify-content-center">
             <>
               {user?.uid ? (
                 <>
-                  <span>{user?.displayName}</span>
-                  <Button variant="light" onClick={handleLogOut}>
+                  <span className="pe-2 ">{user?.displayName}</span>
+                  <Button
+                    variant="light"
+                    style={{ height: "40px" }}
+                    onClick={handleLogOut}
+                  >
                     Log out
                   </Button>
                 </>
@@ -79,9 +82,13 @@ const Header = () => {
                 </>
               )}
             </>
-            <Link to="/profile">
+            <Link className="px-2" to="/profile">
               {user?.photoURL ? (
-                <Image roundedCircle src={user?.photoURL}></Image>
+                <Image
+                  style={{ height: "47px" }}
+                  roundedCircle
+                  src={user?.photoURL}
+                ></Image>
               ) : (
                 <FaUser></FaUser>
               )}
