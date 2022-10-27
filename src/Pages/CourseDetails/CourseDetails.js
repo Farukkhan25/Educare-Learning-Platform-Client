@@ -32,7 +32,7 @@ const CourseDetails = () => {
           </Card.Body>
         </div>
         <Card.Footer>
-          <Link to="/">
+          <Link to="/checkout">
             <Button variant="primary">Get premium access</Button>
           </Link>
         </Card.Footer>

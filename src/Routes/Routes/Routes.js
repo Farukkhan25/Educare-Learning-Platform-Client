@@ -7,6 +7,7 @@ import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import Checkout from "../../Pages/Others/Checkout/Checkout";
 import Profile from "../../Pages/Others/Profile/Profile";
 import TermsAndConditions from "../../Pages/Others/TermsAndConditions/TermsAndConditions";
 import Topics from "../../Pages/Topics/Topics";
@@ -24,14 +25,14 @@ export const routes = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses></Courses>,
-        },
-        {
-            path: "/blog",
-        element: <Blog></Blog>    
       },
-        {
-            path: "/faq",
-        element: <FAQ></FAQ>    
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/faq",
+        element: <FAQ></FAQ>,
       },
 
       {
@@ -47,6 +48,14 @@ export const routes = createBrowserRouter([
           fetch(
             `https://educare-learning-platform-server.vercel.app/courseDetails/${params.id}`
           ),
+      },
+      {
+        path: "/checkout",
+        element: (
+          <PrivateRoute>
+            <Checkout></Checkout>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

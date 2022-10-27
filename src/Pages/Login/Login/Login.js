@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { ButtonGroup } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -23,9 +23,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Login = () => {
-  const { providerLogin } = useContext(AuthContext);
     const [error, setError] = useState('');
-  const { signIn, setLoading } = useContext(AuthContext);
+  const { signIn, setLoading, providerLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -62,9 +61,19 @@ const Login = () => {
   };
 
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const handleGithubSignIn = () => {
+    providerLogin(githubProvider)
       .then((result) => {
         const user = result.user;
         console.log(user);
@@ -193,6 +202,7 @@ const Login = () => {
             className="mb-4 w-100"
             size="lg"
             style={{ backgroundColor: "#55acee" }}
+            onClick={handleGithubSignIn}
           >
             <MDBIcon fab icon="github" className="mx-2" />
             Sign in with Github
