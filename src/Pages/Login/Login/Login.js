@@ -83,54 +83,7 @@ const Login = () => {
 
 
   return (
-    // <div>
-    //   <div>
-    //     <Form onSubmit={handleSubmit}>
-    //       <Form.Group className="mb-3" controlId="formBasicEmail">
-    //         <Form.Label>Email address</Form.Label>
-    //         <Form.Control
-    //           name="email"
-    //           type="email"
-    //           placeholder="Enter email"
-    //           required
-    //         />
-    //       </Form.Group>
-
-    //       <Form.Group className="mb-3" controlId="formBasicPassword">
-    //         <Form.Label>Password</Form.Label>
-    //         <Form.Control
-    //           name="password"
-    //           type="password"
-    //           placeholder="Password"
-    //           required
-    //         />
-    //       </Form.Group>
-
-    //       <Button variant="primary" type="submit">
-    //         Login
-    //       </Button>
-    //       <Form.Text className="text-danger">{error}</Form.Text>
-    //     </Form>
-    //   </div>
-
-    //   <div>
-    //     <ButtonGroup vertical>
-    //       <Button
-    //         onClick={handleGoogleSignIn}
-    //         className="mb-2"
-    //         variant="outline-primary"
-    //       >
-    //         {" "}
-    //         <FaGoogle></FaGoogle> Login with Google
-    //       </Button>
-    //       <Button variant="outline-dark">
-    //         {" "}
-    //         <FaGithub></FaGithub> Login with Github
-    //       </Button>
-    //     </ButtonGroup>
-    //   </div>
-    // </div>
-
+    
     <MDBContainer breakpoint="md" className="p-3 my-5">
       <MDBRow>
         <MDBCol col="10" md="12" lg="6">

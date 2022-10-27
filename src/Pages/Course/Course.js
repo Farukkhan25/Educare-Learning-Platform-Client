@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Course = ({ courses }) => {
     
-    const { title, description, details, image, category_id, _id } = courses;
+    const { title, description, image, _id } = courses;
     return (
       <div>
         <Col>

@@ -7,6 +7,14 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
+import {
+  FaFacebook,
+  FaGithub,
+  FaGoogle,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -18,22 +26,22 @@ const Footer = () => {
 
         <div>
           <Link to="/" className="me-4 text-reset ">
-            <MDBIcon fab icon="facebook-f" />
+            <FaFacebook />
           </Link>
           <Link to="" className="me-4 text-reset">
-            <MDBIcon fab icon="twitter" />
+            <FaTwitter />
           </Link>
           <Link to="" className="me-4 text-reset">
-            <MDBIcon fab icon="google" />
+            <FaGoogle></FaGoogle>
           </Link>
           <Link to="" className="me-4 text-reset">
-            <MDBIcon fab icon="instagram" />
+            <FaInstagram />
           </Link>
           <Link to="" className="me-4 text-reset">
-            <MDBIcon fab icon="linkedin" />
+            <FaLinkedin></FaLinkedin>
           </Link>
           <Link to="" className="me-4 text-reset">
-            <MDBIcon fab icon="github" />
+            <FaGithub></FaGithub>
           </Link>
         </div>
       </section>
@@ -101,7 +109,7 @@ const Footer = () => {
               md="4"
               lg="3"
               xl="3"
-              className="mx-auto mb-md-0 mb-4 text-end"
+              className="mx-auto mb-md-0 mb-4 text-center"
             >
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
               <p>

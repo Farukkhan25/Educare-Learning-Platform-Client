@@ -9,7 +9,7 @@ const HeroSection = () => {
       <Container>
         <Row>
           <Col lg="6" md="6">
-            <div className="hero__content">
+            <div className="hero__content bg-light">
               <h2 className="mb-4 hero__title">
                 Anytime Anywhere <br /> Learn on your <br /> Suitable Schedule
               </h2>

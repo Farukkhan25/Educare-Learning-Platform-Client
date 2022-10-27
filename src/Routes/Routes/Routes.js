@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
 import Courses from "../../Pages/Courses/Courses";
+import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
@@ -17,6 +18,7 @@ export const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -50,14 +52,6 @@ export const routes = createBrowserRouter([
           ),
       },
       {
-        path: "/checkout",
-        element: (
-          <PrivateRoute>
-            <Checkout></Checkout>
-          </PrivateRoute>
-        ),
-      },
-      {
         path: "/login",
         element: <Login></Login>,
       },
@@ -68,6 +62,15 @@ export const routes = createBrowserRouter([
       {
         path: "/terms",
         element: <TermsAndConditions></TermsAndConditions>,
+      },
+
+      {
+        path: "/checkout",
+        element: (
+          <PrivateRoute>
+            <Checkout></Checkout>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/profile",
