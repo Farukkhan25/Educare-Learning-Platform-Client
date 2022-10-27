@@ -13,7 +13,7 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [mode, setmode] = useState("light");
+  const [mode, setMode] = useState("light");
 
   const handleLogOut = () => {
     logOut()
@@ -23,10 +23,10 @@ const Header = () => {
 
   const toggleMode = () => {
     if (mode === "light") {
-      setmode("dark");
+      setMode("dark");
       document.body.style.backgroundColor = "#050122";
     } else {
-      setmode("light");
+      setMode("light");
       document.body.style.backgroundColor = "white";
     }
   };
