@@ -11,9 +11,6 @@ const Topics = () => {
       .then((data) => SetAllCourses(data));
   }, []);
 
-  // const topics = useLoaderData();
-  //   console.log(topics);
-  //   const { title, details, image_url, category_id } = topics;
   return (
     <div>
       <Row xs={1} md={2} className="g-4">
