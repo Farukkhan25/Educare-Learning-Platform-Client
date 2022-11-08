@@ -8,7 +8,7 @@ import CourseCard from "./CourseCard";
 
 const coursesData = [
   {
-    id: "01",
+    id: "1",
     title: "Web Design BootCamp-2022 for Beginners",
     lesson: 12,
     students: 12.5,
@@ -17,7 +17,7 @@ const coursesData = [
   },
 
   {
-    id: "02",
+    id: "2",
     title: "Professional Graphics Design, PhotoShop, Adobe XD, Figma",
     lesson: 12,
     students: 12.5,
@@ -26,7 +26,7 @@ const coursesData = [
   },
 
   {
-    id: "03",
+    id: "3",
     title: "UI/UX BootCamp for Beginners in 2022",
     lesson: 12,
     students: 12.5,

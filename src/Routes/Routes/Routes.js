@@ -65,18 +65,22 @@ export const routes = createBrowserRouter([
       },
 
       {
-        path: "/checkout",
-        element: (
+        path: "/checkout/:id",
+        element: 
           <PrivateRoute>
             <Checkout></Checkout>
-          </PrivateRoute>
-        ),
+          </PrivateRoute>,
+          loader: ({ params }) =>
+          fetch(
+            `https://educare-learning-platform-server.vercel.app/courseDetails/${params.id}`
+          ),
+        
       },
       {
         path: "/profile",
         element: (
           <PrivateRoute>
-            <Profile></Profile>
+            <Profile />
           </PrivateRoute>
         ),
       },

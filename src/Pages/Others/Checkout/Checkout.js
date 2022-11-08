@@ -1,14 +1,17 @@
 import React from 'react';
 import { Card, Container } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
 
 const Checkout = () => {
+  const enrolledData = useLoaderData();
+  const { title, details, image, _id } = enrolledData;
     return (
       <div>
         <Container fluid="md">
           <Card>
             <Card.Header>
               <div className="text-center p-3 ">
-                <h1>You have successfully enrolled to the Course!</h1>
+                <h1>You have successfully enrolled to:  {title}!</h1>
               </div>
             </Card.Header>
 

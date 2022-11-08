@@ -1,13 +1,9 @@
 import React, { useContext, useState } from "react";
-import {
-  Button,
-  Container,
-  Image,
-  Nav,
-  Navbar
-} from "react-bootstrap";
+import { Button, Container, Image, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
@@ -84,11 +80,13 @@ const Header = () => {
             </>
             <Link className="px-2" to="/profile">
               {user?.photoURL ? (
-                <Image
-                  style={{ height: "47px" }}
-                  roundedCircle
-                  src={user?.photoURL}
-                ></Image>
+                <Tippy content={user?.displayName}>
+                  <Image
+                    style={{ height: "47px" }}
+                    roundedCircle
+                    src={user?.photoURL}
+                  ></Image>
+                </Tippy>
               ) : (
                 <FaUser></FaUser>
               )}

@@ -5,7 +5,7 @@ import { useReactToPrint } from "react-to-print";
 
 const CourseDetails = () => {
   const detailsData = useLoaderData();
-  const { title, details, image } = detailsData;
+  const { title, details, image, _id } = detailsData;
 
   // To Print/Download PDF
   const componentRef = useRef();
@@ -32,11 +32,9 @@ const CourseDetails = () => {
           </Card.Body>
         </div>
         <Card.Footer>
-          <>
-            <Link to="/checkout">
-              <Button variant="primary">Get premium access</Button>
-            </Link>
-          </>
+          <Link to={`/checkout/${_id}`}>
+            <Button variant="primary">Get premium access</Button>
+          </Link>
         </Card.Footer>
       </Card>
     </Container>
