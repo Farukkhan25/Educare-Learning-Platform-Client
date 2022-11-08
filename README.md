@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Educare Learning Platform
+=======
+# Educare-Learning-Platform
+>>>>>>> dcc9716e7e1f2faf5dc21d08e9a7deeec1f6b2aa
 
 Welcome to my new react app. This is an online course related website where you may find different courses to attend.
 
@@ -29,3 +33,4 @@ react-countup
 ### Thank You !!!
 
 # b610-learning-platform-client-side-Farukkhan25
+
