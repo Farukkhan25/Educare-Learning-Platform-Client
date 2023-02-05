@@ -24,7 +24,7 @@ h6 {
   font-size: 2rem;
   line-height: 50px;
   font-family: "Poppins", sans-serif;
-  color: #0a2b1e;
+  color: #232b0a;
   font-weight: 600;
 }
 
@@ -44,5 +44,6 @@ button.btn {
 }
 
 i {
-  color: #17bf9e;
+  color: #f8e304;
 }
+

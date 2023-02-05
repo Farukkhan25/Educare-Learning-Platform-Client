@@ -22,7 +22,9 @@ export const routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: (
+          <Home></Home>
+        ),
       },
       {
         path: "/courses",
@@ -66,15 +68,15 @@ export const routes = createBrowserRouter([
 
       {
         path: "/checkout/:id",
-        element: 
+        element: (
           <PrivateRoute>
             <Checkout></Checkout>
-          </PrivateRoute>,
-          loader: ({ params }) =>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
           fetch(
             `https://educare-learning-platform-server.vercel.app/courseDetails/${params.id}`
           ),
-        
       },
       {
         path: "/profile",

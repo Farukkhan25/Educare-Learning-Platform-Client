@@ -1,3 +1,10 @@
+.hero-bg{
+  background-color: #FFC665;
+  /* background-image: url(./../../assets/images/edu-bg.webp); */
+  background-size: cover;
+  object-fit: cover;
+  background-attachment: fixed;
+}
 .hero__content h2 {
   font-weight: 600;
   line-height: 55px;

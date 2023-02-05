@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Gumela';
+  src: local('Gumela'), url(./assets/fonts/Gumela\ Regular.otf) format('opentype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+
+#root{
+  /* font-family: 'Gumela';
+  src: local('Gumela'), url(./assets/fonts/Gumela\ Regular.otf) format('opentype'); */
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -25,7 +37,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #d4fb61;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +48,4 @@
     transform: rotate(360deg);
   }
 }
+

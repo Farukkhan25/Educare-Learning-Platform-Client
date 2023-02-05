@@ -15,7 +15,8 @@ const Testimonials = () => {
     slidesToScroll: 1,
   };
   return (
-    <section>
+    <section>     
+      <div className="img"></div>
       <Container className="bg-body p-4">
         <Row>
           <Col lg="10" md="12" className="m-auto">

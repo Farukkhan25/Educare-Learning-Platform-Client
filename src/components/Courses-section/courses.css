@@ -1,5 +1,7 @@
 .single__course__item {
   padding: 15px;
+  background-color: #1671faec;
+  border-radius: 10px;
 }
 
 .course__img img {
@@ -9,16 +11,19 @@
 
 .enroll a {
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 800;
   font-size: 0.9rem;
-  color: #17bf9e;
+  color: #dafbf5;
+  background-color: #2058FF;
+  padding: 2px 10px;
+  border-radius: 5px;
 }
 
 .lesson,
 .students,
 .rating {
   font-size: 0.9rem;
-  color: #0a2b1e;
+  color: #fbfbfb;
   font-weight: 500;
 }
 
@@ -30,6 +35,7 @@
 
 .course__title {
   line-height: 2rem;
+  color: white;
 }
 
 .course__top__left h2 {

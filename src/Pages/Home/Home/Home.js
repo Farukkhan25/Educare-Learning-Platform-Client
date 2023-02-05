@@ -1,6 +1,4 @@
-import React, { Fragment } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { FaUser } from "react-icons/fa";
+import React, { Fragment, useState } from "react";
 import AboutUs from "../../../components/About-us/AboutUs";
 import ChooseUs from "../../../components/Choose-us/ChooseUs";
 import Company from "../../../components/Company-section/Company";
@@ -10,19 +8,20 @@ import FreeCourse from "../../../components/Free-course-section/FreeCourse";
 import HeroSection from "../../../components/Hero-Section/HeroSection";
 import Newsletter from "../../../components/Newsletter/Newsletter";
 import Testimonials from "../../../components/Testimonial/Testimonials";
-import Header from "../../Shared/Header/Header";
+import CarouselSection from "../../../components/Carousel/CarouselSection";
 
 const Home = () => {
   return (
     <Fragment>
+      <CarouselSection />
       <HeroSection />
       <Company />
-      <AboutUs />
       <AllCourses />
       <ChooseUs />
       <Features />
       <FreeCourse />
       <Testimonials />
+      <AboutUs />
       <Newsletter />
     </Fragment>
   );

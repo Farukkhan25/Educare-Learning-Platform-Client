@@ -1,0 +1,41 @@
+.carousel-item{
+    height: 65vh;
+    color: white;
+}
+.carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgb(1, 1, 16);
+    opacity: 0.3;
+}
+.carousel-caption h3{
+    font-size: 40px;
+    padding: 0;
+}
+.carousel-caption p{
+    font-size: 20px;
+}
+#slide1 p{
+    padding-bottom: 20px;
+}
+#slide2 h3{
+    padding-top: 45px;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+  
+  body {
+    font-size: 10px;
+  }
+  .carousel-caption h3 {
+    font-size: 18px;
+  }
+  .carousel-caption p {
+    font-size: 14px;
+  }
+}

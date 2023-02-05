@@ -19,7 +19,7 @@ import {
 const Footer = () => {
   return (
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
-      <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <section className="d-flex justify-content-center justify-content-lg-around p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>
         </div>
@@ -118,7 +118,7 @@ const Footer = () => {
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                programmingherofaruk@gmail.com
+                farukkhanseu@gmail.com
               </p>
               <p>
                 <MDBIcon icon="phone" className="me-3" /> + 880-1728848078

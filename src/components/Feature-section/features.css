@@ -5,3 +5,29 @@
 .single__feature h6 {
   font-weight: 600;
 }
+
+video {
+  width: 100%;
+  height: 70vh;
+  max-height: 100%;
+  object-fit: fill;
+  /* position: relative; */
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 70vh;
+  background-color: rgba(0,0,0,.4);
+}

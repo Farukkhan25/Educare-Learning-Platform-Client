@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
+import BackgroundVideoPlayer from "react-background-video-player";
 import "./features.css";
+import videoBg from "../../assets/videos/background_video2.mp4";
 
 const FeatureData = [
   {
@@ -25,21 +27,27 @@ const FeatureData = [
 const Features = () => {
   return (
     <section>
-      <Container className="bg-body p-4">
-        <Row>
-          {FeatureData.map((item, index) => (
-            <Col lg="4" md="6" key={index}>
-              <div className="single__feature text-center px-4">
-                <h2 className="mb-3">
-                  <i class={item.icon}></i>
-                </h2>
-                <h6>{item.title}</h6>
-                <p>{item.desc}</p>
-              </div>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <div className="overlay"></div>
+      <div className="content">
+        <Container className=" p-4">          
+          <Row>
+            {FeatureData.map((item, index) => (
+              <Col lg="4" md="6" key={index}>
+                <div className="single__feature text-center">
+                  <h2 className="mb-3">
+                    <i class={item.icon}></i>
+                  </h2>
+                  <div className=" bg-body p-4">
+                    <h6>{item.title}</h6>
+                    <p>{item.desc}</p>
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
+      <video src={videoBg} autoPlay loop muted />
     </section>
   );
 };

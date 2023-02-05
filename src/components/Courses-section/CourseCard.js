@@ -10,7 +10,7 @@ const CourseCard = (props) => {
         <img src={imgUrl} alt="" className="w-100" />
       </div>
 
-      <div className="course__details">
+      <div className="course__details px-2">
         <h6 className="course__title mb-4">{title}</h6>
 
         <div className=" d-flex justify-content-between align-items-center">
