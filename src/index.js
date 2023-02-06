@@ -8,13 +8,16 @@ import "remixicon/fonts/remixicon.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AuthProvider from './contexts/AuthProvider';
+import { ThemeProvider } from './contexts/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

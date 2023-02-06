@@ -10,12 +10,12 @@ const ChooseUs = () => {
   const [showVideo, setShowVideo] = useState(false);
   return (
     <section>
-      <Container className="bg-body p-4">
+      <Container className="bg-body p-4 rounded-3">
         <Row>
           <Col lg="6" md="6">
             <div className="choose__content">
               <h2>Why Choose Us</h2>
-              <p>
+              <p className="text-bold">
                 We’re a leading marketplace platform for learning and teaching
                 online. Explore some of our most popular content and learn
                 something new. Gain new skills and earn a certificate of

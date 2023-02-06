@@ -1,12 +1,30 @@
 import React from "react";
+import { useContext } from "react";
 import { Container, Row, Col } from "reactstrap";
 import heroImg from "../../assets/images/hero-img1.png";
+import { themeContext } from "../../contexts/Context";
 import "./hero-section.css";
 
 const HeroSection = () => {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   return (
-    <section className="hero-bg">
-      <Container className="bg-light rounded-3">
+    <section
+      className="hero-bg"
+      style={
+        darkMode
+          ? { backgroundColor: "#050122" }
+          : { backgroundColor: "#FFC665" }
+      }
+    >
+      <Container
+        className="bg-light rounded-3"
+        style={
+          darkMode
+            ? { backgroundColor: "#023d7c" }
+            : { backgroundColor: "#FFC665" }
+        }
+      >
         <Row>
           <Col lg="6" md="6">
             <div className="hero__content">

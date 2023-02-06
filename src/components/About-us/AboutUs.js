@@ -8,7 +8,11 @@ import "./about.css";
 const AboutUs = () => {
   return (
     <section>
-      <Container className="bg-body py-4">
+      <Container className="bg-body py-4" style={{
+    borderTop: "2px solid blue",
+    borderTopLeftRadius: "15px",
+    borderTopRightRadius: "15px",    
+  }}>
         <Row>
           <Col lg="6" md="6">
             <div className="about__img">

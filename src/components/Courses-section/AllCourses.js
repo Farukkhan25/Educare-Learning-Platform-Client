@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { themeContext } from "../../contexts/Context";
 import { Container, Row, Col } from "reactstrap";
 import courseImg1 from "../../assets/images/web-design.png";
 import courseImg2 from "../../assets/images/graphics-design.png";
@@ -6,6 +7,7 @@ import courseImg3 from "../../assets/images/ui-ux.png";
 import "./courses.css";
 import CourseCard from "./CourseCard";
 import { Gradient } from "react-gradient";
+import { Link } from "react-router-dom";
 
 const coursesData = [
   {
@@ -37,6 +39,8 @@ const coursesData = [
 ];
 
 const AllCourses = () => {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   return (
     <Gradient
       gradients={[
@@ -44,26 +48,38 @@ const AllCourses = () => {
         ["#E9E871", "#A576FF"],
       ]}
       property="background"
-      duration={6000}
+      duration={4000}
       // transition="linear"
       angle="90deg"
     >
       <section style={{ height: "100vh" }}>
-        <Container className="bg-body p-4 rounded-3" style={{ height: "80vh" }}>
+        <Container
+          className=" p-4 rounded-3"
+          style={{
+            background: darkMode
+              ? "#000033"
+              : "linear-gradient(to right, #0099FF, white)",
+            color: darkMode ? "#ffffff" : "",
+            height: "80vh",
+          }}
+        >
           <Row>
             <Col lg="12" className="mb-5">
               <div className="course__top d-flex justify-content-between align-items-center">
                 <div className="course__top__left w-50 pt-4">
-                  <h2>Our Popular Courses</h2>
-                  <p style={{ textAlign: "justify" }}>
+                  <h2 className="text-white">Our Popular Courses</h2>
+                  <p style={{ textAlign: "justify", color: "whiteSmoke" }}>
                     Our online courses provide you with an affordable and
                     flexible way to learn new skills and study new and emerging
                     topics.
                   </p>
                 </div>
 
-                <div className="w-50 text-end">
-                  <button className="btn">See All</button>
+                <div className="w-50 text-end text-bold">
+                  <Link to="/courses">
+                    {" "}
+                    <button className="btn">See All</button>
+                  </Link>
                 </div>
               </div>
             </Col>

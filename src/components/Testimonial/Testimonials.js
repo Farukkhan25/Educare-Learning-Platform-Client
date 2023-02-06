@@ -1,23 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
+import { themeContext } from "../../contexts/Context";
 import "./testimonial.css";
 import { Container, Row, Col } from "reactstrap";
 import Slider from "react-slick";
 import img from "../../assets/images/testimonial01.png";
 
 const Testimonials = () => {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   const settings = {
     infinite: true,
     dots: true,
     speed: 500,
     slidesToShow: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     slidesToScroll: 1,
   };
   return (
-    <section>     
+    <section>
       <div className="img"></div>
-      <Container className="bg-body p-4">
+      <Container
+        className="bg-body p-4 mt-5 t-rounded-3" style={{
+    borderBottom: "2px solid blue",
+    borderBottomLeftRadius: "15px",
+    borderBottomRightRadius: "15px",    
+  }}      
+      >
         <Row>
           <Col lg="10" md="12" className="m-auto">
             <div className="testimonial__wrapper d-flex justify-content-between align-items-center ">

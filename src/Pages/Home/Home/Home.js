@@ -9,19 +9,29 @@ import HeroSection from "../../../components/Hero-Section/HeroSection";
 import Newsletter from "../../../components/Newsletter/Newsletter";
 import Testimonials from "../../../components/Testimonial/Testimonials";
 import CarouselSection from "../../../components/Carousel/CarouselSection";
+import { useEffect } from "react";
 
 const Home = () => {
+  const [theme, setTheme] = useState("");
+  const toggleTheme = () => {
+    theme === "" ? setTheme("light-theme") : setTheme("");
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
     <Fragment>
       <CarouselSection />
-      <HeroSection />
+      <HeroSection theme={theme} />
       <Company />
       <AllCourses />
       <ChooseUs />
       <Features />
       <FreeCourse />
-      <Testimonials />
       <AboutUs />
+      <Testimonials />
       <Newsletter />
     </Fragment>
   );

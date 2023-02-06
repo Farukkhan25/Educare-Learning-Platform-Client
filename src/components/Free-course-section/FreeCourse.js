@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Gradient } from "react-gradient";
 import courseImg01 from "../../assets/images/web-development.png";
@@ -6,8 +6,8 @@ import courseImg02 from "../../assets/images/kids-learning.png";
 import courseImg03 from "../../assets/images/seo.png";
 import courseImg04 from "../../assets/images/ui-ux.png";
 import FreeCourseCard from "./FreeCourseCard";
-
 import "./free-course.css";
+import { themeContext } from "../../contexts/Context";
 
 const freeCourseData = [
   {
@@ -43,6 +43,8 @@ const freeCourseData = [
 ];
 
 const FreeCourse = () => {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   return (
     <Gradient
       gradients={[
@@ -52,13 +54,28 @@ const FreeCourse = () => {
       property="background"
       duration={6000}
       // transition="linear"
-      angle="90deg"
+      angle="-90deg"
     >
       <section>
-        <Container className="bg-body p-4">
+        <Container
+          className="p-4 rounded-3"
+          style={{
+            background: darkMode
+              ? "#003300"
+              : "linear-gradient(to right, white, #0099FF)",
+            color: darkMode ? "#ffffff" : "",
+          }}
+        >
           <Row>
-            <Col lg="12" className="text-center mb-5">
-              <h2 className="fw-bold">Our Free Courses</h2>
+            <Col lg="12" className="text-center mb-3">
+              <h2
+                className="fw-bold"
+                style={{                  
+                  color: darkMode ? "#ffffff" : "",
+                }}
+              >
+                Our Free Courses
+              </h2>
             </Col>
 
             {freeCourseData.map((item) => (

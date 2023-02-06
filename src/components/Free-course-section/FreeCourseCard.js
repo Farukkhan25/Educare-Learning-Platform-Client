@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { themeContext } from "../../contexts/Context";
 
 const FreeCourseCard = (props) => {
   const { imgUrl, title, students, rating } = props.item;
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
 
   return (
     <div className="single__free__course">
@@ -11,7 +14,13 @@ const FreeCourseCard = (props) => {
       </div>
 
       <div className="free__course__details">
-        <h6>{title}</h6>
+        <h6
+          style={{
+            color: darkMode ? "#ffffff" : "",
+          }}
+        >
+          {title}
+        </h6>
 
         <div className=" d-flex align-items-center gap-5">
           <span className=" d-flex align-items-center gap-2">
